@@ -1,0 +1,270 @@
+/* Tender Teachings — GitHub Pages site styles
+   Palette: cream #FFF9F0, light blue #CFE8F5, medium blue #1B6CA8, deep teal headings/footer */
+
+:root {
+  --cream: #FFF9F0;
+  --light-blue: #CFE8F5;
+  --medium-blue: #1B6CA8;
+  --deep-teal: #0F4C5C;
+  --ink: #2b2b2b;
+  --ink-soft: #4a4a4a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  color: var(--deep-teal);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+h1 { font-size: 2.1rem; }
+h2 { font-size: 1.7rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--medium-blue); }
+a:hover { color: var(--deep-teal); }
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.site-header {
+  background: var(--cream);
+  border-bottom: 3px solid var(--deep-teal);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+.brand-name {
+  color: var(--deep-teal);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+}
+
+.main-nav a {
+  color: var(--deep-teal);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+}
+
+.main-nav a:hover { text-decoration: underline; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--medium-blue);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 6px;
+  border: 2px solid var(--medium-blue);
+}
+
+.btn:hover {
+  background: var(--deep-teal);
+  border-color: var(--deep-teal);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--medium-blue);
+}
+
+.btn-outline:hover {
+  background: var(--medium-blue);
+  color: #fff;
+}
+
+.btn-nav { padding: 0.45rem 1rem; font-size: 0.95rem; }
+
+/* Hero */
+.hero {
+  background: var(--light-blue);
+  padding: 3rem 0 2.5rem;
+  text-align: center;
+}
+
+.hero h1 { font-size: 2.3rem; margin-bottom: 1rem; }
+
+.mission {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+/* Sections */
+.section { padding: 2.75rem 0; }
+
+.section-blue { background: var(--light-blue); }
+
+/* At a glance */
+.stats {
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.stat-grid {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.stat-grid li {
+  background: #fff;
+  border: 2px solid var(--light-blue);
+  border-radius: 10px;
+  padding: 1.25rem 0.75rem;
+}
+
+.stat-grid strong {
+  display: block;
+  color: var(--deep-teal);
+  font-size: 1.9rem;
+  line-height: 1.1;
+}
+
+.stat-grid span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+/* Checklists */
+.checklist { padding-left: 1.4rem; }
+.checklist li { margin-bottom: 0.35rem; }
+
+/* How It Works steps */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.steps li {
+  counter-increment: step;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.steps li::before {
+  content: counter(step);
+  display: inline-block;
+  background: var(--medium-blue);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 0.6rem;
+}
+
+/* Help cards */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.help-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+}
+
+.help-card p:last-child { margin-bottom: 0; }
+
+/* Footer */
+.site-footer {
+  background: var(--deep-teal);
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.site-footer p { margin-bottom: 0.4rem; }
+.site-footer p:last-child { margin-bottom: 0; }
+
+.site-footer a { color: #CFE8F5; }
+.site-footer a:hover { color: #fff; }
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  body { font-size: 1rem; }
+  h1, .hero h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.45rem; }
+  .logo { height: 44px; }
+  .brand-name { font-size: 1.25rem; }
+  .hero { padding: 2rem 0; }
+}
